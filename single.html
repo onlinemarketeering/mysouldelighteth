@@ -9,6 +9,7 @@
 		<title>Single - My Soul Delighteth</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="robots" content="noindex">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!-- Google Tag Manager -->
 			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})	(window,document,'script','dataLayer','GTM-TT683QDH');</script>
@@ -28,76 +29,12 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">My Soul Delighteth</a></h1>
-						<nav class="links">
-							<ul>
-								<li><a href="/aboutus.html">About MSD</a></li>
-								<li><a href="/discussion.html">Our Discussion</a></li>
-								<li><a href="/contact.html">Contact MSD</a></li>
-							</ul>
-						</nav>
-						<!-- Search -->
-						<nav class="main">
-							<ul>
-								<!-- No Need <li class="search">
-									<a class="fa-search" href="#search">Search</a>
-									<form id="search" method="get" action="#">
-										<input type="text" name="query" placeholder="Search" />
-									</form>
-								</li> -->
-								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
-								</li>
-							</ul>
-						</nav>
-					</header> 
+				<div id="header-placeholder"></div>
 
 				<!-- Menu -->
 				<section id="menu">
-
-						<!-- Search 
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section> -->
-
-						<!-- Links -->
-							<section>
-								<ul class="links">
-									<li>TOOLS</li>
-									<li>
-										<a href="/landing/squeeze.html">
-											<h3>Scripture Squeeze</h3>
-											<p>Want more out of your scripture reading</p>
-										</a>
-									</li>
-									<!-- More Links
-									<li>
-										<a href="#">
-											<h3>Feugiat veroeros</h3>
-											<p>Phasellus sed ultricies mi congue</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Etiam sed consequat</h3>
-											<p>Porta lectus amet ultricies</p>
-										</a>
-									</li> -->
-								</ul>
-							</section>
-
-						<!-- Actions 
-							<section>
-								<ul class="actions stacked">
-									<li><a href="#" class="button large fit">Log In</a></li>
-								</ul>
-							</section> -->
-
-					</section>
-
+					<section id="menu-placeholder"></section>
+				</section>
 
 				<!-- Main -->
 					<div id="main">
@@ -110,7 +47,7 @@
 										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="226-01-22">January 22, 2026</time>
+										<time class="published" datetime="2026-01-22">January 22, 2026</time>
 										<a href="#" class="author"><span class="name">Tyler Smith</span><img src="images/tyler_circle.png" alt="Tyler Smith" /></a>
 									</div>
 								</header>
@@ -129,16 +66,10 @@
 					</div>
 
 				<!-- Footer -->
-					<section id="footer">
-						<ul class="icons">
-							<li><a href="https://x.com/mysouldelight" class="icon brands fa-twitter" target="_blank" ><span class="label">Twitter</span></a></li>
-							<li><a href="https://www.facebook.com/mysouldelight" class="icon brands fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
-							<li><a href="https://www.instagram.com/mysouldelight" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
-							<!--<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>-->
-							<!--<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>-->
-						</ul>
-						<p class="copyright">&copy; MySoulDelighteth.</p>
-					</section>
+				<section id="footer">
+					<div id="footer-placeholder"></div>
+				</section>
+				
 
 			</div>
 
@@ -148,6 +79,22 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+		<script>
+        // Function to load HTML into a placeholder element
+        function loadHTML(elementId, filename) {
+            fetch(filename)
+                .then(response => response.text())
+                .then(text => {
+                    document.getElementById(elementId).innerHTML = text;
+                })
+                .catch(error => console.error('Failed to load HTML:', error));
+        }
+
+        // Call the function for header and footer
+        loadHTML('header-placeholder', 'header.html');
+		loadHTML('menu-placeholder', 'hamburger_menu.html');
+		loadHTML('footer-placeholder', 'footer.html');
+    </script>
 		<!-- Google Tag Manager (noscript) -->
 			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT683QDH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
